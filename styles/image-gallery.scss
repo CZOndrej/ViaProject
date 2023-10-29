@@ -1,0 +1,19 @@
+#awesome-image-gallery {
+    display: flex;
+
+    .col {
+        width: 33.333333vw;
+        padding: 0 1vw;
+
+        img {
+            width: 100%;
+            height: auto;
+            margin: 1vw 0;
+            cursor: pointer;
+
+            &:hover {
+                opacity: 0.75;
+            }
+        }
+    }
+}

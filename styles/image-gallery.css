@@ -1,0 +1,22 @@
+#awesome-image-gallery {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#awesome-image-gallery .col {
+  width: 33.333333vw;
+  padding: 0 1vw;
+}
+
+#awesome-image-gallery .col img {
+  width: 100%;
+  height: auto;
+  margin: 1vw 0;
+  cursor: pointer;
+}
+
+#awesome-image-gallery .col img:hover {
+  opacity: 0.75;
+}
+/*# sourceMappingURL=image-gallery.css.map */
