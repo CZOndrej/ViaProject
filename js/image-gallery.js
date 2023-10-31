@@ -1,26 +1,37 @@
-let imageCount = 100;
-let columnsCount = 3;
+let galleryId = '#gallery'
+let overlayClass = '.gallery__overlay'
+
+function show(imgId) {
+
+    let imgSource = $('#' + imgId);
+    let imgView = $(galleryId).find('.gallery__image-view').first();
 
 
-$(function () {
-});
+    let img = imgView.find('img').first();
+
+    img.attr('src', imgSource.attr('src'));
+
+    let overlay  = $(galleryId).find(overlayClass).first();
+    overlay.removeClass('gallery__overlay_hidden');
+    imgView.removeClass('gallery__image-view_hidden');
+    document.body.style.overflow = 'hidden';
+}
 
 function init() {
+    $(galleryId).find('img').on('click', function(){
+        let imgId = $(this).attr('id');
+        show(imgId);
+    });
 
-
-
-    let gallery = $('#awesome-image-gallery');
-    let columns = gallery.children('.col');
-
-    for (let i = 1; i <= imageCount; i++)
-    {
-        let colIndex = i % columnsCount;
-
-        let col = columns[colIndex];
-        let imageTag = '<img src="images/gal/image' + i +'.jpeg" id="image' + i + '">'
-        // let imageTag = '<b>Ahoj </b> '
-        col.append(imageTag);
-    }
-
+    $(galleryId).find(".gallery__overlay-close").on('click', function(){
+        let overlay  = $(galleryId).find(overlayClass).first();
+        let imgView = $(galleryId).find('.gallery__image-view').first();
+        imgView.addClass('gallery__image-view_hidden');
+        overlay.addClass('gallery__overlay_hidden');
+        document.body.style.overflow = 'initial';
+    });
 
 }
+
+$(init);
+
