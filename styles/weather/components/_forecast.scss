@@ -1,0 +1,46 @@
+@use '../util' as u;
+
+.forecast {
+  display: flex;
+  justify-content: space-between;
+  margin-top: u.rem(40);
+  flex-wrap: wrap;
+  gap: 15px;
+
+  width: min(100%, 690px);
+
+  p {
+    margin: 0;
+  }
+
+  &__value {
+    font-weight: 500;
+  }
+
+  &__circ {
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    margin-right: 0.3rem;
+    flex-shrink: 0;
+
+    &--red {
+      background-color: var(--c-red);
+    }
+    &--blue {
+      background-color: var(--c-blue);
+    }
+    &--green {
+        background-color: var(--c-green);
+    }
+    &--yellow {
+        background-color: var(--c-yellow);
+    }
+  }
+
+  &__desc {
+    font-size: var(--f-xs);
+    color: var(--c-middle-gray);
+    text-transform: capitalize;
+  }
+}

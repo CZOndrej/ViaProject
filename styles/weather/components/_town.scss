@@ -1,0 +1,16 @@
+@use '../util' as u;
+
+.town {
+  &__os, &__map {
+    height: u.rem(350);
+    width: 100%;
+  }
+
+  @media (max-width: 768px) {
+    margin-top: u.rem(100);
+  }
+
+  &__value {
+    //margin-left: auto;
+  }
+}

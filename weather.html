@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Via - Weather</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-2.27.0.min.js" charset="utf-8"></script>
+    <script src="http://www.openlayers.org/api/OpenLayers.js"></script>
+    <link rel="stylesheet" href="fontawesome/css/fontawesome.min.css">
+    <link rel="stylesheet" href="fontawesome/css/brands.min.css">
+    <link rel="stylesheet" href="fontawesome/css/solid.min.css">
+    <link rel="stylesheet" href="styles/weather/weather.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body class="wrapper">
+<header class="header">
+    <h2 class="header__logo">Weather info</h2>
+    <div class="input-group input-group-sm header__search">
+        <input class="form-control" type="text" id="city" placeholder="City" aria-describedby="btn-my-location">
+        <button class="btn btn-outline-secondary" onclick="fetchForCity()">
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+    </div>
+</header>
+
+<main class="row mt-5">
+    <div class="col-12 col-md-8">
+            <button class="btn btn-outline-secondary" data-bs-toggle="collapse" data-bs-target="#data-settings">
+                <i class="fa-solid fa-gear"></i>
+                Settings
+            </button>
+        <div class="form collapse mt-2" id="data-settings">
+            <div class="row gx-6">
+                <div class="col-12 col-md-6">
+                    <label class="form-label" for="start">Start:</label>
+                    <input class="form-control" type="date" id="start">
+                </div>
+                <div class="col-12 col-md-6">
+                    <label class="form-label" for="end">End:</label>
+                    <input class="form-control" type="date" id="end">
+                </div>
+            </div>
+
+            <div class="row my-2">
+                <div class="col-12 col-md-6">
+                    <label class="form-label" for="latitude">Latitude:</label>
+                    <input class="form-control" type="text" id="latitude">
+                </div>
+                <div class="col-12 col-md-6">
+                    <label class="form-label" for="longitude">Longitude:</label>
+                    <div class="input-group mb-3">
+                        <input class="form-control" type="text" id="longitude" aria-describedby="btn-my-location">
+                        <button class="btn btn-outline-secondary" id="btn-my-location" onclick="getLocation()">
+                            My location
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+            <div class="d-flex justify-content-end">
+                <button class="btn btn-primary" id="fetch" onclick="showData()" disabled>
+                    Refresh
+                </button>
+            </div>
+        </div>
+        <div class="forecast">
+            <div class="forecast__item">
+                <div class="d-flex gap-2">
+                    <p class="forecast__value" id="temperature">No data</p>
+                    <p class="forecast__unit">°C</p>
+                </div>
+                <div class="d-flex align-items-center">
+                    <span class="forecast__circ forecast__circ--red"></span>
+                    <p class="forecast__desc">Temperature</p>
+                </div>
+            </div>
+            <div class="forecast__item">
+                <div class="d-flex gap-2">
+                    <p class="forecast__value" id="precipitation">No data</p>
+                    <p class="forecast__unit">mm</p>
+                </div>
+                <div class="d-flex align-items-center">
+                    <span class="forecast__circ forecast__circ--blue"></span>
+                    <p class="forecast__desc">precipitation</p>
+                </div>
+            </div>
+            <div class="forecast__item">
+                <div class="d-flex gap-2">
+                    <p class="forecast__value" id="wind-speed">No data</p>
+                    <p class="forecast__unit">km/h</p>
+                </div>
+                <div class="d-flex align-items-center">
+                    <span class="forecast__circ forecast__circ--green"></span>
+                    <p class="forecast__desc">Wind speed</p>
+                </div>
+            </div>
+            <div class="forecast__item">
+                <div class="d-flex gap-2">
+                    <p class="forecast__value" id="air-pressure">No data</p>
+                    <p class="forecast__unit">hPa</p>
+                </div>
+                <div class="d-flex align-items-center">
+                    <span class="forecast__circ forecast__circ--yellow"></span>
+                    <p class="forecast__desc">Air pressure</p>
+                </div>
+            </div>
+        </div>
+        <div id="chart" class="chart mt-5">
+            <div class="chart__header">
+                <p class="chart__title">
+                    Temperature
+                </p>
+            </div>
+            <div class="chart__data" id="chart-temperature">
+
+            </div>
+        </div>
+    </div>
+    <div class="col-12 col-md-4">
+        <ul class="list-group town">
+            <li class="list-group-item p-0">
+                <div class="town__map" id="map">
+<!--                    <iframe class="town__map" id="openstreet" src="https://www.openstreetmap.org/export/embed.html?bbox=13.77891540527344%2C49.88401721724657%2C14.925613403320314%2C50.266521106936445&amp;layer=mapnik&amp;marker=50.07565058628708%2C14.352264404296875"></iframe>-->
+                </div>
+            </li>
+            <li class="list-group-item d-flex justify-content-between">
+                Latitude:
+                <span class="town__value" id="town-lat">No data</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between">
+                Longitude:
+                <span class="town__value" id="town-lon">No data</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between">
+                Elevation:
+                <span class="town__value"  id="town-elv">No data</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between">
+                Timezone:
+                <span class="town__value"  id="town-tz">No data</span>
+            </li>
+        </ul>
+    </div>
+</main>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+<script src="js/weather.js"></script>
+</body>
+</html>
