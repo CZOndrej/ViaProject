@@ -11,7 +11,7 @@ $(function () {
     $('#slide-menu').on('touchmove', slideMenu);
 
 
-    let itemsCount = $("#prim-menu-cont > ul > .prim-menu-item").length;
+    let itemsCount = $("#prim-menu-cont > div > ul > .prim-menu-item").length;
 
 
     for (let i = 0; i < itemsCount; i++) {

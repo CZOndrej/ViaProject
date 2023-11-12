@@ -9,10 +9,13 @@
           integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <link rel="stylesheet" href="styles/styles.css">
     <link rel="stylesheet" href="styles/desktop.css">
+    <link rel="stylesheet" href="styles/digitaltrends/digitaltrends.css">
     <link rel="stylesheet" href="styles/reset.css">
     <link rel="stylesheet" href="fontawesome/css/fontawesome.min.css">
     <link rel="stylesheet" href="fontawesome/css/brands.min.css">
     <link rel="stylesheet" href="fontawesome/css/solid.min.css">
+    <link rel="stylesheet" href="styles/image-gallery.css">
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <title>Document</title>
 </head>
@@ -20,7 +23,7 @@
 <body>
 <header class="top-bar">
     <nav class="top-bar__inner">
-        <a href="" class="top-bar__logo">
+        <a href="/" class="top-bar__logo">
             <svg width="203" height="36" viewBox="0 0 203 36" xmlns="http://www.w3.org/2000/svg">
                 <path
                         d="M52.5559 14.8375L52.3016 14.5549C51.3126 13.4246 49.8997 12.8312 48.0912 12.8312C44.2765 12.8312 41.2812 16.1373 41.2812 20.3477C41.2812 24.558 44.2765 27.8641 48.0912 27.8641C49.8997 27.8641 51.3126 27.2707 52.3016 26.1404L52.5559 25.8578V27.4685H56.6249V7.06677L52.5559 8.53615V14.8375ZM48.9672 24.0493C46.8197 24.0493 45.3785 22.58 45.3785 20.3759C45.3785 18.1718 46.8197 16.7025 48.9672 16.7025C51.1148 16.7025 52.5559 18.1718 52.5559 20.3759C52.5559 22.5517 51.1148 24.0493 48.9672 24.0493Z"
@@ -88,38 +91,39 @@
         </button>
         <div class="prim-menu" id="prim-menu-cont">
             <div class="wrapper-content">
-            <ul>
-                <li class="prim-menu-search">
-                    <div class="prim-menu-search-wrapper">
-                        <input type="text" class="prim-menu-search-input" placeholder="Search">
-                        <input type="button" class="prim-menu-search-btn">
-                    </div>
-                </li>
-                <li class="prim-menu-item" id="m-item-0">
-                    <input class="menu-toggle" id="m-cb-0" type="checkbox">
-                    <label class="menu-label" id="m-lbl-0">Best Products</label>
-                    <button class="menu-btn" id="m-btn-0">Best products</button>
-                    <ul class="prim-menu-sub-list" id="m-list-0">
-                        <li class="prim-menu-sub-item"><a href="#">Menu 1</a></li>
-                        <li class="prim-menu-sub-item"><a href="#">Menu 2</a></li>
-                        <li class="prim-menu-sub-item"><a href="#">Menu 3</a></li>
-                        <li class="prim-menu-sub-item"><a href="#">Menu 4</a></li>
-                        <li class="prim-menu-sub-item"><a href="#">Menu 5</a></li>
-                    </ul>
-                </li>
-                <li class="prim-menu-item" id="m-item-1">
-                    <input class="menu-toggle" id="m-cb-1" type="checkbox">
-                    <label class="menu-label" id="m-lbl-1">Products reviews</label>
-                    <button class="menu-btn" id="m-btn-1">Products reviews</button>
-                    <ul class="prim-menu-sub-list" id="m-list-1">
-                        <li class="prim-menu-sub-item"><a href="#">Menu 1</a></li>
-                        <li class="prim-menu-sub-item"><a href="#">Menu 2</a></li>
-                        <li class="prim-menu-sub-item"><a href="#">Menu 3</a></li>
-                        <li class="prim-menu-sub-item"><a href="#">Menu 4</a></li>
-                        <li class="prim-menu-sub-item"><a href="#">Menu 5</a></li>
-                    </ul>
-                </li>
-            </ul>
+
+                <ul>
+                    <li class="prim-menu-search">
+                        <div class="prim-menu-search-wrapper">
+                            <input type="text" class="prim-menu-search-input" placeholder="Search">
+                            <input type="button" class="prim-menu-search-btn">
+                        </div>
+                    </li>
+                    <li class="prim-menu-item" id="m-item-0">
+                        <input class="menu-toggle" id="m-cb-0" type="checkbox">
+                        <label class="menu-label" id="m-lbl-0">Best Products</label>
+                        <button class="menu-btn" id="m-btn-0">Best products</button>
+                        <ul class="prim-menu-sub-list" id="m-list-0">
+                            <li class="prim-menu-sub-item"><a href="#">Menu 1</a></li>
+                            <li class="prim-menu-sub-item"><a href="#">Menu 2</a></li>
+                            <li class="prim-menu-sub-item"><a href="#">Menu 3</a></li>
+                            <li class="prim-menu-sub-item"><a href="#">Menu 4</a></li>
+                            <li class="prim-menu-sub-item"><a href="#">Menu 5</a></li>
+                        </ul>
+                    </li>
+                    <li class="prim-menu-item" id="m-item-1">
+                        <input class="menu-toggle" id="m-cb-1" type="checkbox">
+                        <label class="menu-label" id="m-lbl-1">Products reviews</label>
+                        <button class="menu-btn" id="m-btn-1">Products reviews</button>
+                        <ul class="prim-menu-sub-list" id="m-list-1">
+                            <li class="prim-menu-sub-item"><a href="#">Menu 1</a></li>
+                            <li class="prim-menu-sub-item"><a href="#">Menu 2</a></li>
+                            <li class="prim-menu-sub-item"><a href="#">Menu 3</a></li>
+                            <li class="prim-menu-sub-item"><a href="#">Menu 4</a></li>
+                            <li class="prim-menu-sub-item"><a href="#">Menu 5</a></li>
+                        </ul>
+                    </li>
+                </ul>
             </div>
         </div>
     </nav>
@@ -129,199 +133,186 @@
         <li class="tag-menu__item"><a href="#" class="tag-menu__link">FuboTv</a></li>
         <li class="tag-menu__item"><a href="#" class="tag-menu__link">Instafest</a></li>
         <li class="tag-menu__item"><a href="#" class="tag-menu__link">OnePlus 11</a></li>
-        <li class="tag-menu__item"><a href="#" class="tag-menu__link">Google Pixrl Fold</a></li>
+        <li class="tag-menu__item"><a href="#" class="tag-menu__link">Google Pixel Fold</a></li>
         <li class="tag-menu__item"><a href="#" class="tag-menu__link">Hulu with Live TV</a></li>
         <li class="tag-menu__item"><a href="#" class="tag-menu__link">AppleMusic</a></li>
     </ul>
 </div>
-<section class="post-cont post-cont_theme_dark">
-    <div class="post-cont__inner">
-        <div class="post-col-xl">
-            <div class="post post_size_xl">
-                <div class="post__image">
-                    <img src="images/gal/image313.jpeg">
-                </div>
-                <h3 class="post__title post-title-xl">
-                    <a href="/nfl.html" class="post__link">
-                    Violent Night review: David Harbour delivers merry sseason's
-                    beatings
-                    </a>
-                </h3>
-                <p class="post__description">
 
-                    Violent Night delivers on its wild premise and then some, and offers a bloody-good Christmas action
-                    movie.
-                </p>
-                <div class="post__meta">
-                    <a href="#" class="post-category-link">movies & tv</a>
-                    <a href="#" class="post-author-link">Rick Marshal</a>
-                </div>
-            </div>
-            <div class="post post_size_md">
-                <div class="post__image">
-                    <img src="images/gal/image293.jpeg">
-                </div>
-                <div class="post__content">
-                    <div class="post__title-cont">
-                        <h3 class="post__title">Revolutionizing Education: The Impact of Online Learning</h3>
-                    </div>
-                    <div class="post__meta">
-                        <a href="#" class="post-category-link">education</a>
-                        <a href="#" class="post-author-link">Lillian Parker</a>
-                    </div>
-                </div>
-            </div>
-            <div class="post post_size_md border-none">
-                <div class="post__image">
-                    <img src="images/gal/image315.jpeg">
-                </div>
-                <div class="post__content">
-                    <div class="post__title-cont">
-                        <h3 class="post__title">Exploring the Cosmos: Latest Discoveries in Space Exploration</h3>
-                    </div>
-                    <div class="post__meta">
-                        <a href="#" class="post-category-link">science & tech</a>
-                        <a href="#" class="post-author-link">Natalie Turner</a>
-                    </div>
-                </div>
-            </div>
+<!--Article content-->
+<main class="wrapper-thin pb-5">
+    <div class="art-header mb-5">
+        <p class="note mt-4">
+            Digital Trends may earn a commission when you buy through links on our site. Why trust us?
+        </p>
+        <div class="d-breadcrumb mt-4">
+            <ol class="d-breadcrumb__list">
+                <li class="d-breadcrumb__item"><a class="d-breadcrumb__link" href="#">home</a></li>
+                <li class="d-breadcrumb__item"><a class="d-breadcrumb__link" href="#">entertainment</a></li>
+                <li class="d-breadcrumb__item"><a class="d-breadcrumb__link" href="#">guides</a></li>
+            </ol>
         </div>
-        <div class="post-col-sm">
-            <div class="post post_size_sm">
-                <div class="post__title-cont">
-                    <h3 class="post__title">How to watch worldCup 2022</h3>
-                </div>
-                <div class="post__meta">
-                    <a href="#" class="post-category-link">movies & tv</a>
-                    <a href="#" class="post-author-link">Rick Marshal</a>
-                </div>
-            </div>
-            <div class="post post_size_sm">
-                <div class="post__title-cont">
-                    <h3 class="post__title">The Future of Virtual Reality: Exploring New Dimensions</h3>
-                </div>
-                <div class="post__meta">
-                    <a href="#" class="post-category-link">technology</a>
-                    <a href="#" class="post-author-link">Alexandra Wright</a>
-                </div>
-            </div>
-            <div class="post post_size_sm">
-                <div class="post__title-cont">
-                    <h3 class="post__title">Smart Homes: Enhancing Lifestyle with IoT Devices</h3>
-                </div>
-                <div class="post__meta">
-                    <a href="#" class="post-category-link">home automation</a>
-                    <a href="#" class="post-author-link">Emily Davis</a>
-                </div>
-            </div>
-            <div class="post post_size_sm">
-                <div class="post__title-cont">
-                    <h3 class="post__title">Gaming Trends 2023: What to Expect Next</h3>
-                </div>
-                <div class="post__meta">
-                    <a href="#" class="post-category-link">gaming</a>
-                    <a href="#" class="post-author-link">Michael Anderson</a>
-                </div>
-            </div>
-            <div class="post post_size_sm">
-                <div class="post__title-cont">
-                    <h3 class="post__title">The Rise of AI: Transforming Industries and Beyond</h3>
-                </div>
-                <div class="post__meta">
-                    <a href="#" class="post-category-link">technology</a>
-                    <a href="#" class="post-author-link">Sophie Robinson</a>
-                </div>
-            </div>
-            <div class="post post_size_sm">
-                <div class="post__title-cont">
-                    <h3 class="post__title">Cinematic Marvels: Behind the Scenes of Blockbuster Movies</h3>
-                </div>
-                <div class="post__meta">
-                    <a href="#" class="post-category-link">movies & tv</a>
-                    <a href="#" class="post-author-link">Christopher Hayes</a>
-                </div>
-            </div>
-            <div class="post post_size_sm border-none">
-                <div class="post__title-cont">
-                    <h3 class="post__title">The Sound Revolution: High-Res Audio and Its Impact on Music</h3>
-                </div>
-                <div class="post__meta">
-                    <a href="#" class="post-category-link">music</a>
-                    <a href="#" class="post-author-link">Olivia Baker</a>
-                </div>
-            </div>
+        <h1 class="art-header__headline">
+            NFL games today: schedule, channels, live streams for November 12
+        </h1>
 
-        </div>
-        <div class="post-col-sm ">
-            <div class="post post_size_md">
-                <div class="post__image">
-                    <img src="images/gal/image293.jpeg">
-                </div>
-                <div class="post__content">
-                    <div class="post__title-cont">
-                        <h3 class="post__title">Platinum Dunes polished horror’s grimy past for a new generation</h3>
-                    </div>
-                    <div class="post__meta">
-                        <a href="#" class="post-category-link">entertainment</a>
-                        <a href="#" class="post-author-link">A.A. Dowd</a>
-                    </div>
+        <div class="art-header__info">
+            <div class="art-header__author">
+                <img src="https://www.digitaltrends.com/wp-content/uploads/2022/11/Dan-Girolamo-Headshot-2-1.jpg?resize=60%2C60&p=1"
+                     alt="avatar" class="art-header__avatar">
+                <div class="art-header__by">
+                    <span class="art-header__name">
+                        By
+                        <a href="#" class="art-header__author-link">Dan Girolamo</a>
+                    </span>
+                    <time>November 12, 2023 5:30AM</time>
                 </div>
             </div>
-            <div class="post post_size_md border-none">
-                <div class="post__image">
-                    <img src="images/gal/image316.jpeg">
-                </div>
-                <div class="post__content">
-                    <div class="post__title-cont">
-                        <h3 class="post__title">Future of Transportation: Electric Vehicles and Beyond</h3>
-                    </div>
-                    <div class="post__meta">
-                        <a href="#" class="post-category-link">automotive</a>
-                        <a href="#" class="post-author-link">Elijah Foster</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </div>
-    <div class="inner">
-        <div class="original-series">
-            <span>Original series</span>
-        </div>
-        <div class="series-container">
-            <img src="https://www.digitaltrends.com/wp-content/uploads/2023/09/genius-home-hp-logo.png?fit=460%2C190&p=1"
-                 alt="">
-            <img src="https://www.digitaltrends.com/wp-content/uploads/2023/09/life-on-mars-hp-logo.png?fit=460%2C190&p=1"
-                 alt="">
-            <img src="https://www.digitaltrends.com/wp-content/uploads/2023/09/respec-hp-logo.png?fit=460%2C190&p=1"
-                 alt="">
-            <img src="https://www.digitaltrends.com/wp-content/uploads/2023/09/tech-for-change-hp-logo.png?fit=460%2C190&p=1"
-                 alt="">
-            <img src="https://www.digitaltrends.com/wp-content/uploads/2023/09/women-with-byte-hp-logo.png?fit=460%2C190&p=1"
-                 alt="">
+            <button class="art-header__share">
+                Share
+            </button>
         </div>
     </div>
-</section>
-<section class="post-cont post-cont_theme_light">
-    <div class="post-cont__inner">
 
 
-        <div class="post">
-            <div class="post-sm">
-                <div class="post-image">
-                    image
-                </div>
-                <div class="post-title-sm-cont">
-                    <h3 class="post-title">How to watch worldCup 2022</h3>
-                </div>
-                <div class="post-info">
-                    <a href="#" class="post-category-link">movies & tv</a>
-                    <a href="#" class="post-author-link">Rick Marshal</a>
+    <article class="c-article">
+        <p class="c-article__paragraph">We’ve reached the unofficial halfway point of the 2023 NFL season. The two best
+            teams in the league are the Philadelphia Eagles and the Kansas City Chiefs, and both are on a bye this week.
+            Today’s Week 10 slate is much weaker than Week 9. Yet, there are still a few games that jump out. One of
+            those games features the Cleveland Browns going on the road to face their division rival, Baltimore Ravens.
+            The other standout game is between the San Francisco 49ers, who have lost three straight games, and the
+            red-hot Jacksonville Jaguars.</p>
+        <p class="c-article__paragraph">Overall, there are 12 games on <strong>Sunday, November 12</strong>. You can
+            find the schedule,
+            channels, and live streams below. To watch every game, sign up for NFL Sunday Ticket, which is now 50% off
+            for the rest of the season. Sunday Ticket is available for purchase through YouTube TV.</p>
+        <h2 class="c-article__title">Indianapolis Colts at New England Patriots start time, channel, and live
+            stream</h2>
+
+        <!--        Twitter post-->
+        <div class="d-flex justify-content-center">
+
+            <blockquote class="twitter-tweet"><p lang="en" dir="ltr">The <a
+                    href="https://twitter.com/hashtag/NFLFrankfurtGames?src=hash&amp;ref_src=twsrc%5Etfw">#NFLFrankfurtGames</a>
+                continue!<br><br>Watch <a href="https://twitter.com/Colts?ref_src=twsrc%5Etfw">@Colts</a> vs. <a
+                        href="https://twitter.com/Patriots?ref_src=twsrc%5Etfw">@Patriots</a> on <a
+                        href="https://twitter.com/nflnetwork?ref_src=twsrc%5Etfw">@NFLNetwork</a> Sunday at 9:30am ET.
+                And
+                also, stream NFL Network live in <a
+                        href="https://twitter.com/hashtag/NFLPlus?src=hash&amp;ref_src=twsrc%5Etfw">#NFLPlus</a>
+                <br><br>Terms
+                and Conditions Apply to NFL+. Visit <a href="https://t.co/gpDvGle0kC">https://t.co/gpDvGle0kC</a> <a
+                        href="https://t.co/AwFd9tjYKO">pic.twitter.com/AwFd9tjYKO</a></p>&mdash; NFL (@NFL) <a
+                    href="https://twitter.com/NFL/status/1722648086688788781?ref_src=twsrc%5Etfw">November 9, 2023</a>
+            </blockquote>
+            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </div>
+
+        <ul class="c-article__list">
+            <li>Start Time: <strong>9:30 a.m. ET</strong></li>
+            <li>Channel: NFL Network</li>
+            <li>Stream: NFL+, YouTube TV, Hulu with Live TV, FuboTV, Sling TV</li>
+        </ul>
+
+
+        <p class="c-article__paragraph">The game between the Colts (4-5) and Patriots (2-7) will be the fifth and final
+            game in the 2023 International Series. It will be played at Frankfurt Stadium in Frankfurt, Germany. The
+            Colts are still holding out hope for the playoffs but desperately need to win to get .500. New England’s
+            season is heading in the wrong direction. If things continue to decline, will Bill Belichick be the
+            Patriots’ coach in 2024?</p>
+
+        <h2 class="c-article__title">Related</h2>
+        <ul class="c-article__list c-article__list--links">
+            <li>NFL games today: schedule, channels, live streams for November 5</strong></li>
+            <li>Miami Dolphins vs. Kansas City Chiefs live stream: watch the NFL for free</li>
+            <li>Houston Texans vs. Carolina Panthers live stream: watch the NFL for free</li>
+        </ul>
+        <h2 class="c-article__title">Cleveland Browns at Baltimore Ravens start time, channel, and live stream</h2>
+        <img class="c-article__img" src="images/nfl/1.webp">
+        <ul class="c-article__list">
+            <li>Start Time:<strong> 1 p.m. ET</strong></li>
+            <li>Channel: Fox</li>
+            <li>Stream: NFL+, YouTube TV, Hulu with Live TV, FuboTV, Sling TV</li>
+        </ul>
+        <p class="c-article__paragraph">The Browns’ (5-3) defense continues to be one of the best units in the NFL. In
+            Week 9, they pitched a 27-0 shutout against the Cardinals. However, Cleveland has a daunting task in Week 10
+            when they head to Baltimore to play the Ravens (7-2), who look like the most complete team in football.</p>
+
+        <h2 class="c-article__title">Houston Texans at Cincinnati Bengals start time, channel, and live stream</h2>
+        <div class="d-flex justify-content-center">
+            <blockquote class="twitter-tweet"><p lang="en" dir="ltr">&quot;Grizzle left tight F-fly pass 37 punch waggle
+                help baby dizzy x fan on the turbo&quot; <br><br>Joe Burrow giving play calls in the huddle is
+                mesmerizing
+                😂<br><br>(via <a href="https://twitter.com/NFLFilms?ref_src=twsrc%5Etfw">@NFLFilms</a>, <a
+                        href="https://twitter.com/NFL?ref_src=twsrc%5Etfw">@NFL</a>)<a href="https://t.co/5A1Z0fntr9">pic.twitter.com/5A1Z0fntr9</a>
+            </p>&mdash; Bleacher Report (@BleacherReport) <a
+                    href="https://twitter.com/BleacherReport/status/1722702971622797646?ref_src=twsrc%5Etfw">November 9,
+                2023</a></blockquote>
+            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </div>
+        <ul class="c-article__list">
+            <li>Start Time:<strong> 1 p.m. ET</strong></li>
+            <li>Channel: CBC</li>
+            <li>Stream: NFL+, Paramount+, YouTube TV, Hulu with Live TV, FuboTV</li>
+        </ul>
+        <p class="c-article__paragraph">We’re running out of words to describe Houston’s C.J. Stroud. In Week 9, the
+            rookie quarterback threw for 470 yards and five touchdowns, including the game-winning score with six
+            seconds left, as the Texans (4-4) defeated the Bucs by a score of 39-37. Houston has a major test on Sunday
+            when they face Cincinnati. With a healthy Joe Burrow, the Bengals (5-3) are easily one of the three best
+            teams in the AFC.</p>
+
+        <h2 class="c-article__title">Editors' Recommendations</h2>
+        <ul class="c-article__list c-article__list--links">
+            <li>New York Jets vs. Las Vegas Raiders live stream: watch the NFL for free</li>
+            <li>Dallas Cowboys vs. Philadelphia Eagles live stream: watch the NFL for free</li>
+            <li>NFL games today: schedule, channels, live streams for October 29</li>
+            <li>NFL games today: schedule, channels, live streams for October 22</li>
+        </ul>
+
+        <div class="c-article__footer">
+            <div>
+                <div class="art-header__author">
+                    <img src="https://www.digitaltrends.com/wp-content/uploads/2022/11/Dan-Girolamo-Headshot-2-1.jpg?resize=60%2C60&p=1"
+                         alt="avatar" class="art-header__avatar">
+                    <div class="art-header__by">
+                    <span class="art-header__name">
+                        By
+                        <a href="#" class="art-header__author-link col-6">Dan-Girolamo</a>
+                    </span>
+                        <time>October 31, 2023</time>
+                    </div>
                 </div>
             </div>
+            <div>
+                <p>Dan is a passionate and multitalented content creator with experience in pop culture, entertainment,
+                    and sports. Throughout...</p>
+            </div>
         </div>
-    </div>
-</section>
+
+        <div class="c-article__another-post mt-5">
+            <p class="d-breadcrumb__item"><a class="d-breadcrumb__link" href="#">Sound</a></p>
+            <h1 class="art-header__headline">
+                JBL PartyBox Ultimate speaker review: there’s no party it can’t power
+            </h1>
+            <img class="c-article__img mt-5" src="images/jbl/main.webp">
+            <p class="c-article__paragraph">I had completely forgotten that JBL was sending me its latest party speaker
+                to
+                review. There were some delays in shipping it to my home in Canada, and it just slipped my mind. Then
+                one
+                day, as if to ask, “remember me?” the 87-pound JBL PartyBox Ultimate landed on my porch in a box the
+                size of
+                a small refrigerator. Standing nearly 4 feet tall, the thing is a beast. And I mean that in the best
+                possible way.
+                <span class="grad"></span>
+            </p>
+            <button class="c-article__read-more"><a href="/jbl.html">Read more</a></button>
+        </div>
+
+    </article>
+
+</main>
+
+
 <footer class="footer">
     <div class="footer__inner">
         <div class="footer__top">
@@ -437,6 +428,8 @@
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
         crossorigin="anonymous"></script>
 <script src="js/nav.js"></script>
+<script src="js/carousel.js"></script>
+<script src="js/image-gallery.js"></script>
 
 </body>
 
