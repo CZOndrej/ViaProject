@@ -1,0 +1,51 @@
+@use '../util' as u;
+
+.c-carousel {
+  margin-top: u.rem(60);
+  position: relative;
+  width: 100%;
+  height: u.rem(400);
+  overflow: hidden;
+
+
+  &__img-wrapper {
+    height: u.rem(400);
+    overflow: hidden;
+    width: 100%;
+    position: absolute;
+    transition: all 0.5s;
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__btn {
+    position: absolute;
+    font-size: u.rem(20);
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: var(--c-black);
+    border: none;
+    width: u.rem(40);
+    height: u.rem(40);
+    background-color: var(--c-light-gray);
+    border-radius: 50%;
+
+    //&:active {
+    //  font-size: u.rem(45);
+    //}
+
+    &--prev {
+      left: u.rem(40);
+    }
+
+    &--next {
+      right: u.rem(40);
+    }
+
+  }
+}

@@ -1,15 +1,14 @@
 let galleryId = '#gallery'
 let overlayClass = '.gallery__overlay'
 
-function show(imgId) {
+function show(imgSrc) {
 
-    let imgSource = $('#' + imgId);
     let imgView = $(galleryId).find('.gallery__image-view').first();
 
 
     let img = imgView.find('img').first();
 
-    img.attr('src', imgSource.attr('src'));
+    img.attr('src', imgSrc);
 
     let overlay  = $(galleryId).find(overlayClass).first();
     overlay.removeClass('gallery__overlay_hidden');
@@ -19,7 +18,7 @@ function show(imgId) {
 
 function init() {
     $(galleryId).find('img').on('click', function(){
-        let imgId = $(this).attr('id');
+        let imgId = $(this).attr('src');
         show(imgId);
     });
 

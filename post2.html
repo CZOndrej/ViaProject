@@ -1,25 +1,506 @@
-<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>Post 2</title>
-    <link rel="stylesheet" href="styles/weather/cmp.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/desktop.css">
+    <link rel="stylesheet" href="styles/digitaltrends/digitaltrends.css">
+    <link rel="stylesheet" href="styles/reset.css">
+    <link rel="stylesheet" href="fontawesome/css/fontawesome.min.css">
+    <link rel="stylesheet" href="fontawesome/css/brands.min.css">
+    <link rel="stylesheet" href="fontawesome/css/solid.min.css">
+    <link rel="stylesheet" href="styles/image-gallery.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <title>Document</title>
 </head>
+
 <body>
-<main class="article">
-    <ul class="breadcumb">
-        <li class="breadcumb__item">home</li>
-        <li class="breadcumb__item">mobile</li>
-        <li class="breadcumb__item">news</li>
+<header class="top-bar">
+    <nav class="top-bar__inner">
+        <a href="" class="top-bar__logo">
+            <svg width="203" height="36" viewBox="0 0 203 36" xmlns="http://www.w3.org/2000/svg">
+                <path
+                        d="M52.5559 14.8375L52.3016 14.5549C51.3126 13.4246 49.8997 12.8312 48.0912 12.8312C44.2765 12.8312 41.2812 16.1373 41.2812 20.3477C41.2812 24.558 44.2765 27.8641 48.0912 27.8641C49.8997 27.8641 51.3126 27.2707 52.3016 26.1404L52.5559 25.8578V27.4685H56.6249V7.06677L52.5559 8.53615V14.8375ZM48.9672 24.0493C46.8197 24.0493 45.3785 22.58 45.3785 20.3759C45.3785 18.1718 46.8197 16.7025 48.9672 16.7025C51.1148 16.7025 52.5559 18.1718 52.5559 20.3759C52.5559 22.5517 51.1148 24.0493 48.9672 24.0493Z"
+                        fill="white"></path>
+                <path
+                        d="M60.9197 6.72577C59.5917 6.72577 58.4331 7.85606 58.4331 9.2124C58.4331 10.5687 59.5634 11.699 60.9197 11.699C62.2478 11.699 63.4064 10.5687 63.4064 9.2124C63.4064 7.85606 62.2478 6.72577 60.9197 6.72577Z"
+                        fill="white"></path>
+                <path d="M62.9558 13.2266H58.8867V27.4682H62.9558V13.2266Z" fill="white"></path>
+                <path d="M86.9169 13.2258H82.8479V27.4675H86.9169V13.2258Z" fill="white"></path>
+                <path
+                        d="M93.3893 22.41V17.1259H95.7912L97.3171 13.2265H93.3893V9.24219L89.3203 10.8528V22.4383C89.3203 26.027 91.1853 27.6659 95.2261 27.6659C95.9325 27.6659 96.6954 27.6094 97.5432 27.5246L95.6499 23.8229C94.1805 23.8229 93.3893 23.7946 93.3893 22.41Z"
+                        fill="white"></path>
+                <path
+                        d="M108.703 14.8349L108.449 14.5523C107.46 13.422 106.047 12.8286 104.239 12.8286C100.424 12.8286 97.4288 16.1347 97.4288 20.345C97.4288 24.5553 100.424 27.8614 104.239 27.8614C106.047 27.8614 107.46 27.268 108.449 26.1377L108.703 25.8552V27.4658H112.772V13.2242H108.703V14.8349ZM105.115 24.0467C102.967 24.0467 101.526 22.5773 101.526 20.3733C101.526 18.1692 102.967 16.6998 105.115 16.6998C107.262 16.6998 108.703 18.1692 108.703 20.3733C108.703 22.5491 107.262 24.0467 105.115 24.0467Z"
+                        fill="white"></path>
+                <path d="M114.977 27.4671H119.074V6.61328L114.977 8.0544V27.4671Z" fill="white"></path>
+                <path
+                        d="M126.816 9.10223L122.719 10.5716L122.69 13.2278H121.306V17.1273H122.69V22.4114C122.69 24.2481 123.029 25.4914 123.792 26.3109C124.612 27.1868 125.912 27.5824 127.918 27.5824C128.483 27.5824 129.076 27.5542 129.755 27.4977V23.8242C129.415 23.8525 129.161 23.8525 128.935 23.8525C128.2 23.8525 127.692 23.7677 127.353 23.5699C126.957 23.3439 126.759 22.9765 126.759 22.4114V17.1273H129.755V13.2278H126.759L126.816 9.10223Z"
+                        fill="white"></path>
+                <path
+                        d="M147.839 12.8286C143.431 12.8286 140.238 15.9934 140.238 20.345C140.238 24.7814 143.487 27.8614 148.15 27.8614C150.806 27.8614 152.869 26.929 154.281 25.064L151.032 23.199C150.382 23.8772 149.336 24.2728 148.206 24.2728C146.313 24.2728 145.098 23.5663 144.589 22.1535L144.533 21.9557H154.931C155.016 21.4471 155.073 20.9102 155.073 20.345C155.073 16.0499 151.964 12.8286 147.839 12.8286ZM144.448 18.9887L144.504 18.8191C144.928 17.265 146.115 16.4173 147.81 16.4173C149.421 16.4173 150.608 17.2932 151.032 18.8191L151.088 18.9887H144.448Z"
+                        fill="white"></path>
+                <path
+                        d="M165.669 12.8286C163.889 12.8286 162.42 13.4503 161.628 14.5523L161.374 14.8914V13.2807L157.305 14.7218V27.4658H161.374V19.6951C161.374 17.7171 162.42 16.5586 164.228 16.5586C165.528 16.5586 166.884 17.2933 166.884 19.356V27.4941H170.953V18.7061C170.981 14.6371 168.297 12.8286 165.669 12.8286Z"
+                        fill="white"></path>
+                <path
+                        d="M184.572 14.8352L184.317 14.5526C183.328 13.4223 181.915 12.8289 180.107 12.8289C176.292 12.8289 173.297 16.135 173.297 20.3453C173.297 24.5556 176.292 27.8617 180.107 27.8617C181.915 27.8617 183.328 27.2683 184.317 26.138L184.572 25.8555V27.4661H188.641V7.48828L184.572 8.9294V14.8352ZM180.955 24.047C178.807 24.047 177.366 22.5776 177.366 20.3736C177.366 18.1695 178.807 16.7001 180.955 16.7001C183.102 16.7001 184.543 18.1695 184.543 20.3736C184.571 22.5494 183.13 24.047 180.955 24.047Z"
+                        fill="white"></path>
+                <path
+                        d="M141.622 12.9416C141.227 12.8569 140.859 12.8286 140.464 12.8286H140.435H140.407C138.655 12.8286 137.271 13.3938 136.451 14.4675L136.197 14.7784V13.2807L136.112 13.309V13.2525L132.043 13.422V27.4941H136.197V19.6951C136.197 17.7454 137.186 16.6151 138.91 16.5586C139.475 15.1457 140.407 13.9024 141.622 12.9416Z"
+                        fill="white"></path>
+                <path
+                        d="M76.4621 14.8349L76.2078 14.5523C75.2187 13.422 73.8059 12.8286 71.9974 12.8286C68.1827 12.8286 65.1874 16.1347 65.1874 20.345C65.1874 24.5554 68.1827 27.8614 71.9974 27.8614C73.7494 27.8614 75.1622 27.2963 76.1512 26.2225L76.4055 25.94V28.6244C76.4055 30.7719 74.5688 32.0718 72.8169 32.0718C71.1215 32.0718 69.7368 31.224 69.2282 29.8677L69.1152 29.5569L65.4418 30.885L65.5265 31.1958C66.6003 34.1063 69.4543 35.9995 72.8169 35.9995C77.225 35.9995 80.5594 32.8347 80.5594 28.6526V13.2242H76.4903V14.8349H76.4621ZM72.8734 24.0467C70.7258 24.0467 69.2847 22.5773 69.2847 20.3733C69.2847 18.1692 70.7258 16.6998 72.8734 16.6998C75.0209 16.6998 76.4621 18.1692 76.4621 20.3733C76.4621 22.5491 75.0209 24.0467 72.8734 24.0467Z"
+                        fill="white"></path>
+                <path
+                        d="M84.9398 6.72656C83.6117 6.72656 82.4531 7.85685 82.4531 9.2132C82.4531 10.5695 83.5834 11.6998 84.9398 11.6998C86.2679 11.6998 87.4264 10.5695 87.4264 9.2132C87.4264 7.85685 86.2961 6.72656 84.9398 6.72656Z"
+                        fill="white"></path>
+                <path
+                        d="M197.286 18.6199C196.071 18.3091 195.11 18.0548 195.11 17.3484C195.11 16.755 195.619 16.3876 196.467 16.3876C197.145 16.3876 197.682 16.6137 198.105 17.1223L201.864 15.7942L201.948 15.766C200.79 13.901 198.812 12.8555 196.467 12.8555C193.697 12.8555 190.9 14.2966 190.9 17.4896C190.9 20.5979 193.754 21.3891 195.817 21.9825C197.06 22.3216 198.049 22.6042 198.049 23.2824C198.049 23.7627 197.766 24.3279 196.325 24.3279C195.365 24.3279 194.602 23.9888 194.121 23.3106L190.278 24.667H190.25C191.324 26.8145 193.415 27.9166 196.325 27.9166C199.179 27.9166 202.231 26.7015 202.231 23.2824C202.259 19.9198 199.377 19.1568 197.286 18.6199Z"
+                        fill="white"></path>
+                <path
+                        d="M35.7454 35.8301H0.0565144C0.0282572 35.8301 0 35.8019 0 35.7736V0.0565144C0 0.0282572 0.0282572 0 0.0565144 0H35.7454C35.7736 0 35.8019 0.0282572 35.8019 0.0565144V35.7454C35.8301 35.8019 35.8019 35.8301 35.7454 35.8301Z"
+                        fill="url(#paint0_linear_732_147)"></path>
+                <path
+                        d="M29.5 15.5691H20.2599V6.32902C20.2599 6.18774 20.1469 6.07471 20.0056 6.07471H15.8236C15.6823 6.07471 15.5692 6.18774 15.5692 6.32902V15.5691H6.32914C6.18786 15.5691 6.07483 15.6822 6.07483 15.8234V20.0338C6.07483 20.1751 6.18786 20.2881 6.32914 20.2881H15.5692V29.5282C15.5692 29.6695 15.6823 29.7825 15.8236 29.7825H20.0339C20.1752 29.7825 20.2882 29.6695 20.2882 29.5282V20.2598H29.5283C29.6696 20.2598 29.7826 20.1468 29.7826 20.0055V15.8234C29.7261 15.6822 29.6131 15.5691 29.5 15.5691Z"
+                        fill="white"></path>
+                <path
+                        d="M6.32902 25.1781H10.5676C10.7089 25.1781 10.8219 25.0651 10.8219 24.9238V21.872C10.8219 21.7307 10.7089 21.6177 10.5676 21.6177H6.32902C6.18774 21.6177 6.07471 21.7307 6.07471 21.872V24.8955C6.07471 25.0651 6.18774 25.1781 6.32902 25.1781Z"
+                        fill="white"></path>
+                <path
+                        d="M14.128 26.1958H6.32902C6.18774 26.1958 6.07471 26.3088 6.07471 26.4501V29.4736C6.07471 29.6149 6.18774 29.728 6.32902 29.728H14.128C14.2693 29.728 14.3823 29.6149 14.3823 29.4736V26.4501C14.3541 26.3088 14.241 26.1958 14.128 26.1958Z"
+                        fill="white"></path>
+                <defs>
+                    <linearGradient id="paint0_linear_732_147" x1="0.0206909" y1="35.7987" x2="35.7987" y2="0.0206896"
+                                    gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#0074F5"></stop>
+                        <stop offset="1" stop-color="#03AAFF"></stop>
+                    </linearGradient>
+                </defs>
+            </svg>
+        </a>
+        <input type="checkbox" id="ham-menu-cb" class="d-none">
+        <button class="top-bar__ham  ham-bg" id="ham-menu-toggle">
+            menu
+        </button>
+        <div class="prim-menu" id="prim-menu-cont">
+            <ul>
+                <li class="prim-menu-search">
+                    <div class="prim-menu-search-wrapper">
+                        <input type="text" class="prim-menu-search-input" placeholder="Search">
+                        <input type="button" class="prim-menu-search-btn">
+                    </div>
+                </li>
+                <li class="prim-menu-item" id="m-item-0">
+                    <input class="menu-toggle" id="m-cb-0" type="checkbox">
+                    <label class="menu-label" id="m-lbl-0">Best Products</label>
+                    <button class="menu-btn" id="m-btn-0">Best products</button>
+                    <ul class="prim-menu-sub-list" id="m-list-0">
+                        <li class="prim-menu-sub-item"><a href="#">Menu 1</a></li>
+                        <li class="prim-menu-sub-item"><a href="#">Menu 2</a></li>
+                        <li class="prim-menu-sub-item"><a href="#">Menu 3</a></li>
+                        <li class="prim-menu-sub-item"><a href="#">Menu 4</a></li>
+                        <li class="prim-menu-sub-item"><a href="#">Menu 5</a></li>
+                    </ul>
+                </li>
+                <li class="prim-menu-item" id="m-item-1">
+                    <input class="menu-toggle" id="m-cb-1" type="checkbox">
+                    <label class="menu-label" id="m-lbl-1">Products reviews</label>
+                    <button class="menu-btn" id="m-btn-1">Products reviews</button>
+                    <ul class="prim-menu-sub-list" id="m-list-1">
+                        <li class="prim-menu-sub-item"><a href="#">Menu 1</a></li>
+                        <li class="prim-menu-sub-item"><a href="#">Menu 2</a></li>
+                        <li class="prim-menu-sub-item"><a href="#">Menu 3</a></li>
+                        <li class="prim-menu-sub-item"><a href="#">Menu 4</a></li>
+                        <li class="prim-menu-sub-item"><a href="#">Menu 5</a></li>
+                    </ul>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+</header>
+<div class="tag-menu">
+    <ul class="tag-menu__list" id="slide-menu">
+        <li class="tag-menu__item"><a href="#" class="tag-menu__link">FuboTv</a></li>
+        <li class="tag-menu__item"><a href="#" class="tag-menu__link">Instafest</a></li>
+        <li class="tag-menu__item"><a href="#" class="tag-menu__link">OnePlus 11</a></li>
+        <li class="tag-menu__item"><a href="#" class="tag-menu__link">Google Pixrl Fold</a></li>
+        <li class="tag-menu__item"><a href="#" class="tag-menu__link">Hulu with Live TV</a></li>
+        <li class="tag-menu__item"><a href="#" class="tag-menu__link">AppleMusic</a></li>
     </ul>
+</div>
 
-    <h1 class="article__title">
-        The future of Fitbit doesn’t look good
-    </h1>
+<!--Article content-->
+<main class="wrapper-thin pb-5">
+    <div class="art-header">
+        <p class="note mt-4">
+            Digital Trends may earn a commission when you buy through links on our site. Why trust us?
+        </p>
+        <div class="d-breadcrumb mt-4">
+            <ol class="d-breadcrumb__list">
+                <li class="d-breadcrumb__item"><a class="d-breadcrumb__link" href="#">home</a></li>
+                <li class="d-breadcrumb__item"><a class="d-breadcrumb__link" href="#">movies</a></li>
+                <li class="d-breadcrumb__item"><a class="d-breadcrumb__link" href="#">reviews</a></li>
+            </ol>
+        </div>
+        <h1 class="art-header__headline">
+            JBL PartyBox Ultimate speaker review: there’s no party it can’t power
+        </h1>
 
-    
+        <div class="art-header__info">
+            <div class="art-header__author">
+                <img src="https://www.digitaltrends.com/wp-content/uploads/wp-content/uploads/2022/01/discord-profile-picture.jpg?resize=200%2C200&p=1"
+                     alt="avatar" class="art-header__avatar">
+                <div class="art-header__by">
+                    <span class="art-header__name">
+                        By
+                        <a href="#" class="art-header__author-link">Nadeem Sarwar</a>
+                    </span>
+                    <time>October 31, 2023</time>
+                </div>
+            </div>
+            <button class="art-header__share">
+                Share
+            </button>
+        </div>
+    </div>
 
+    <div class="c-carousel">
+        <div class="c-carousel__img-wrapper">
+            <img class="c-carousel__img" src="images/jbl/main.webp" alt="">
+        </div>
+        <div class="c-carousel__img-wrapper">
+            <img class="c-carousel__img" src="images/jbl/6.webp" alt="">
+        </div>
+        <div class="c-carousel__img-wrapper">
+            <img class="c-carousel__img" src="images/jbl/7.webp" alt="">
+        </div>
+        <div class="c-carousel__img-wrapper">
+            <img class="c-carousel__img" src="images/jbl/5.webp" alt="">
+        </div>
+        <div class="c-carousel__img-wrapper">
+            <img class="c-carousel__img" src="images/jbl/4.webp" alt="">
+        </div>
+        <button class="c-carousel__btn c-carousel__btn--prev" id="c-carousel-prev">
+            <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        <button class="c-carousel__btn c-carousel__btn--next" id="c-carousel-next">
+            <i class="fa-solid fa-chevron-right"></i>
+        </button>
+    </div>
+
+    <div class="c-rating">
+        <div class="c-rating__info">
+            <h3 class="c-rating__product">JBL PartyBox Ultimate</h3>
+            <div class="c-rating__stars">
+                <img class="c-rating__star-img" alt="rating-star"
+                     src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNSIgaGVpZ2h0PSIxNCIgZmlsbD0iIzAwNjA4YyI+PHBhdGggZD0iTTE1IDUuMUg5LjNMNy41IDAgNS43IDUuMUgwbDQuNCAzLjZMMi4zIDE0bDUuMi0zLjIgNS4yIDMuMi0yLjEtNS4zeiIvPjwvc3ZnPg=="/>
+                <img class="c-rating__star-img" alt="rating-star"
+                     src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNSIgaGVpZ2h0PSIxNCIgZmlsbD0iIzAwNjA4YyI+PHBhdGggZD0iTTE1IDUuMUg5LjNMNy41IDAgNS43IDUuMUgwbDQuNCAzLjZMMi4zIDE0bDUuMi0zLjIgNS4yIDMuMi0yLjEtNS4zeiIvPjwvc3ZnPg=="/>
+                <img class="c-rating__star-img" alt="rating-star"
+                     src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNSIgaGVpZ2h0PSIxNCIgZmlsbD0iIzAwNjA4YyI+PHBhdGggZD0iTTE1IDUuMUg5LjNMNy41IDAgNS43IDUuMUgwbDQuNCAzLjZMMi4zIDE0bDUuMi0zLjIgNS4yIDMuMi0yLjEtNS4zeiIvPjwvc3ZnPg=="/>
+                <img class="c-rating__star-img" alt="rating-star"
+                     src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNSIgaGVpZ2h0PSIxNCIgZmlsbD0iIzAwNjA4YyI+PHBhdGggZD0iTTE1IDUuMUg5LjNMNy41IDAgNS43IDUuMUgwbDQuNCAzLjZMMi4zIDE0bDUuMi0zLjIgNS4yIDMuMi0yLjEtNS4zeiIvPjwvc3ZnPg=="/>
+                <img class="c-rating__star-img" alt="rating-star"
+                     src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNSIgaGVpZ2h0PSIxNCIgZmlsbD0iIzAwNjA4YyI+PHBhdGggZD0iTTE1IDUuMUg5LjNMNy41IDAgNS43IDUuMUgwbDQuNCAzLjZMMi4zIDE0bDUuMi0zLjIgNS4yIDMuMi0yLjEtNS4zeiIvPjwvc3ZnPg=="/>
+            </div>
+        </div>
+        <div class="c-rating__award">
+            <img class="c-rating__award-img"
+                 src="https://www.digitaltrends.com/wp-content/themes/dt-stardust/assets/images/svg/award-ec.svg"
+                 alt="">
+            <p class="c-rating__award-desc">
+                “It's big, it's brash, and the JBL PartyBox Ultimate will turn any party into a banger.”
+            </p>
+        </div>
+        <div class="c-rating__pros">
+            <div class="c-rating__title">
+                Pros
+            </div>
+            <ul class="c-rating__list">
+                <li class="c-rating__list__item c-rating__list__item--pros">It's loud. Really loud.</li>
+                <li class="c-rating__list__item c-rating__list__item--pros">It's also crystal clear and defined</li>
+                <li class="c-rating__list__item c-rating__list__item--pros">Wi-Fi connectivity means hi-res audio</li>
+                <li class="c-rating__list__item c-rating__list__item--pros">The app is excellent</li>
+                <li class="c-rating__list__item c-rating__list__item--pros">Mic and guitar inputs</li>
+                <li class="c-rating__list__item c-rating__list__item--pros">Well-designed control panel</li>
+            </ul>
+        </div>
+        <div class="c-rating__cons">
+            <div class="c-rating__title">
+                Cons
+            </div>
+            <ul class="c-rating__list">
+                <li class="c-rating__list__item c-rating__list__item--cons">It's big and heavy</li>
+                <li class="c-rating__list__item c-rating__list__item--cons">Karaoke features could be better</li>
+                <li class="c-rating__list__item c-rating__list__item--cons">Pricey</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <article class="c-article">
+        <p class="c-article__paragraph">I had completely forgotten that JBL was sending me its latest party speaker to
+            review. There were some delays in shipping it to my home in Canada, and it just slipped my mind. Then one
+            day, as if to ask, “remember me?” the 87-pound JBL PartyBox Ultimate landed on my porch in a box the size of
+            a small refrigerator. Standing nearly 4 feet tall, the thing is a beast. And I mean that in the best
+            possible way.</p>
+        <p class="c-article__paragraph">The newest and biggest of JBL’s party speaker lineup, the flagship “Ultimate”
+            couldn’t live up to its name any more than it does. It’s a bona fide party in a box that you can wheel into
+            any room, dance hall, or backyard to turn the place upside down with sound and light. At 1,100 watts RMS,
+            it’s one of (if not the most) powerful party speakers on the market, and it’s the loudest and
+            clearest-sounding I’ve ever heard, without breaking a sweat.</p>
+        <h2 class="c-article__title">JBL PartyBox Ultimate: design</h2>
+        <p class="c-article__paragraph">Did I mention how big the PartyBox Ultimate is? It’s worth repeating. I live in
+            a modest-sized suburban Toronto house, and I had to clear the furniture out of my living room to make space
+            for the unboxing. It comes well-packed in Styrofoam, though, and was relatively easy to get out of the box.
+            If you’re doing it alone, however, follow the instructions printed on the box’s flap (always read the
+            instructions, boys and girls), as it makes it manageable for one person.</p>
+        <p class="c-article__paragraph">The speaker stands at 41.3 inches by 18.9-inches deep and 17.3-inches wide. And,
+            as mentioned, it weighs a hefty 87.1 pounds, roughly 10 pounds heavier than JBL’s outgoing champion, the JBL
+            PartyBox 1000, and more than any other party speaker I’ve ever come across. One public service announcement
+            I can make about the PartyBox Ultimate is to not lift it by yourself. Sure, it has a sturdy plastic handle,
+            the wheels are big and smooth, and it rolls around with ease. But don’t even try to get this thing up or
+            down a set of stairs on your own. Your back will thank you.</p>
+        <p class="c-article__paragraph">The outer shell is a hard, rugged plastic, except for the metal speaker grille
+            emblazoned with the JBL logo. The Ultimate is built like a missile and carries an IPX4 splashproof rating,
+            so pool parties or a little rain (or a spilled cocktail) won’t be a problem. Behind the grille sits an array
+            of six JBL drivers: two honkin’ 9-inch subwoofers, bordered with LEDs that make up the main look of the
+            speaker, two 4.5-inch midrange speakers, and two 2.75-inch tweeters. On the back bottom of the speaker is
+            also a bass port for additional low end. What didn’t carry over from the PartyBox 1000 is the bottom-facing
+            subwoofer, but the Ultimate doesn’t need it. JBL says that the Ultimate has the power to “rock [a space] the
+            size of two basketball courts,” which, from my experience, is 100% true.</p>
+        <div id="gallery">
+            <div class="col">
+                <img src="images/jbl/1.webp">
+                <img src="images/jbl/2.webp">
+            </div>
+            <div class="col">
+                <img src="images/jbl/3.webp">
+                <img src="images/jbl/4.webp">
+            </div>
+            <div class="gallery__overlay gallery__overlay_hidden">
+                <button class="gallery__overlay-close">
+                    <i class="fa-solid fa-xmark" style="color: #000000;"></i>
+                </button>
+            </div>
+            <div class="gallery__image-view gallery__image-view_hidden">
+                <img src="#">
+            </div>
+        </div>
+        <p class="c-article__paragraph">Consistent with a lot of party speakers, all the controls are well-situated on
+            the top panel of the device and are easy to access. Two large dials control volume and lights, and you’ll
+            also find a Bluetooth pairing button, bass boost, and the multi-speaker connect button. Above that is the
+            programmable party pad (more on this later), and above that are volume, EQ, and echo knobs for the main
+            microphone. There’s even a slot where you can mount your smartphone or tablet. Unlike some party speakers,
+            you can control most of the Ultimate’s features from this top panel without the need of the companion app,
+            which is great because you don’t need to rely on having your phone with you all the time.</p>
+        <p class="c-article__paragraph">On the back of the Ultimate, behind a rugged protective flap, you’ll find a
+            panel of inputs, including two quarter-inch jacks, one for the main mic and another for mic 2/guitar, as
+            well as a USB-A port for USB sticks and charging devices, a 3.5mm AUX in, and in/out ports for
+            daisy-chaining to other PartyBox Ultimate speakers. There’s also a compartment for storing the power cable,
+            which makes this the perfect time to mention that the Ultimate does not have a battery, so it must be
+            plugged in. But with this kind of juice, that makes sense.</p>
+
+        <h2 class="c-article__title">JBL PartyBox Ultimate: Connectivity</h2>
+
+        <p class="c-article__paragraph">Getting connected to the PartyBox Ultimate is easy and there are many options.
+            It can connect via Wi-Fi (which is new for JBL party speakers, and rare for party speakers in general) and
+            Bluetooth 5.3, as well as throughline input, AirPlay, Alexa Cast, and Chromecast. The JBL One app is
+            well-designed and is the usual hub for all this connectivity, but Spotify Connect and Tidal Connect support
+            means you can control those streaming services with their apps instead, if you prefer those interfaces.
+            AirPlay also allowed me to connect the Ultimate to my Apple TV 4K for some serious movie sound, as well as
+            access to my music streaming apps installed on it. This is also fun at gatherings because the song details
+            and album art displays on your TV.</p>
+        <img class="c-article__img" src="images/jbl/5.webp">
+
+        <p class="c-article__paragraph">I was most interested in checking out the PartyBox Ultimate’s Wi-Fi abilities,
+            though, which not only allowed me to put it to the test with hi-res, lossless quality music thanks to native
+            Tidal, Qobuz, and Amazon Music integration in the JBL One app, but it also let me listen to Dolby
+            Atmos-encoded music tracks (it’s worth noting, though, that if there’s no Wi-Fi access, you won’t be able to
+            play hi-res music at all, as the Ultimate’s Bluetooth does not support it).</p>
+        <p class="c-article__paragraph">The dedicated Wi-Fi connection also meant that phone notifications that would
+            have normally rumbled out of the speaker over Bluetooth stayed confined to my phone — 100-plus decibels of
+            tri-tone text message notifications will not sound pleasing at your party.</p>
+
+        <h2 class="c-article__title">JBL PartyBox Ultimate: sound and performance</h2>
+        <img class="c-article__img" src="images/jbl/6.webp">
+
+
+        <p class="c-article__paragraph">If you’re familiar at all with JBL’s pleasant little chime tone when you turn on
+            one of its Bluetooth speakers, the PartyBox Ultimate has this, too — except that it shook my house. And
+            things just got crazier from there. As advertised, the Ultimate’s power is authoritative, with the ability
+            to effortlessly push out the kind of volume you’d find in a nightclub or a really good wedding. At less than
+            40% volume, it rattled my walls and made the floors vibrate. And that’s without the bass boost.</p>
+        <p class="c-article__paragraph">But it’s actually ham-fisted to just call it loud. The PartyBox Ultimate is
+            balanced, articulate, and one of the clearest-sounding speakers I’ve ever heard, even at unreasonable
+            volumes. I managed to lug the speaker to my family’s cabin for a weekend so I could let it fly in a bigger
+            room and with no one around for miles. And if you would have walked by while we were just punishing the
+            cabin walls with everything from Dua Lipa, Daft Punk, and Wu Tang to My Bloody Valentine, New Order, and
+            Soundgarden, all synced up with the Ultimate’s light show, you might have stood in line to get in. (And my
+            cabin has a two-drink minimum.)</p>
+        <img class="c-article__img" src="images/jbl/7.webp">
+
+        <p class="c-article__paragraph">I tested the Ultimate at a variety of volumes, ranging from around the 10% level
+            to 30% and as loud as around 60%, where I only left it for a few seconds because it was just too loud. I’m
+            sure in a much larger space, like a banquet hall, you could push it, but that’s about as far as I was
+            willing to go. What’s impressive is how it performed throughout the range — clean and bright highs without
+            fatiguing the ears, detailed and uniform mids, and punchy, tight bass that just saturates and fills your
+            chest with tracks like Billie Eilish’s Xanny (my go-to bass track).</p>
+        <p class="c-article__paragraph">There’s also a two-level Bass Boost button that either adds more round and fat
+            saturation (“Deep”) or tightens things up with more of a mid-chest punch (“Punchy”). And for further
+            fine-tuning, the JBL One app has a decent five-band EQ with savable presets. It performs well no matter
+            which streaming service you use.</p>
+
+        <div class="c-article__footer">
+            <div>
+                <div class="art-header__author">
+                    <img src="https://www.digitaltrends.com/wp-content/uploads/wp-content/uploads/2022/01/discord-profile-picture.jpg?resize=200%2C200&p=1"
+                         alt="avatar" class="art-header__avatar">
+                    <div class="art-header__by">
+                    <span class="art-header__name">
+                        By
+                        <a href="#" class="art-header__author-link col-6">Nadeem Sarwar</a>
+                    </span>
+                        <time>October 31, 2023</time>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <p>Nadeem Sarwar is a Toronto-based technology journalist, editor....</p>
+            </div>
+        </div>
+
+    </article>
 
 </main>
+
+
+<footer class="footer">
+    <div class="footer__inner">
+        <div class="footer__top">
+            <div class="footer__top-left">
+                <p class="footer__title footer__title--xl">
+                    Upgrade your lifestyle
+                </p>
+                <p class="footer__text">Digital Trends helps readers keep tabs on the fast-paced world of tech with all
+                    the
+                    latest news, fun product reviews, insightful editorials, and one-of-a-kind sneak peeks.</p>
+            </div>
+            <div class="footer__top-right">
+                <div class="d-flex footer__social">
+                    <a href="#">
+                        <i class="fa-brands fa-facebook social__icon"></i>
+                    </a>
+                    <a href="#">
+                        <i class="fa-brands fa-instagram social__icon"></i>
+                    </a>
+                    <a href="#">
+                        <i class="fa-brands fa-twitter social__icon"></i>
+                    </a>
+                    <a href="#">
+                        <i class="fa-brands fa-youtube social__icon"></i>
+                    </a>
+                    <a href="#">
+                        <i class="fa-brands fa-pinterest social__icon"></i>
+                    </a>
+                    <a href="#">
+                        <i class="fa-brands fa-pinterest social__icon"></i>
+                    </a>
+                    <a href="#">
+                        <i class="fa-brands fa-linkedin social__icon"></i>
+                    </a>
+                    <a href="#">
+                        <i class="fa-brands fa-tiktok social__icon"></i>
+                    </a>
+                </div>
+                <div class="footer__list-cont">
+                    <ul class="footer__list">
+                        <li class="footer__list-item"><a href="#" class="footer__link">Mobile</a></li>
+                        <li class="footer__list-item"><a href="#" class="footer__link">Computing</a></li>
+                        <li class="footer__list-item"><a href="#" class="footer__link">Gaming</a></li>
+                        <li class="footer__list-item"><a href="#" class="footer__link">Audio / Video</a></li>
+                        <li class="footer__list-item"><a href="#" class="footer__link">Smart Home</a></li>
+                        <li class="footer__list-item"><a href="#" class="footer__link">Entertainment</a></li>
+                    </ul>
+                    <ul class="footer__list">
+                        <li class="footer__list-item"><a href="#" class="footer__link">Mobile</a></li>
+                        <li class="footer__list-item"><a href="#" class="footer__link">Computing</a></li>
+                        <li class="footer__list-item"><a href="#" class="footer__link">Gaming</a></li>
+                        <li class="footer__list-item"><a href="#" class="footer__link">Audio / Video</a></li>
+                        <li class="footer__list-item"><a href="#" class="footer__link">Smart Home</a></li>
+                        <li class="footer__list-item"><a href="#" class="footer__link">Entertainment</a></li>
+                    </ul>
+                </div>
+                <div class="footer__list-cont">
+                    <ul class="footer__list">
+                        <li class="footer__list-item"><a href="#" class="footer__link">Mobile</a></li>
+                        <li class="footer__list-item"><a href="#" class="footer__link">Computing</a></li>
+                        <li class="footer__list-item"><a href="#" class="footer__link">Gaming</a></li>
+                        <li class="footer__list-item"><a href="#" class="footer__link">Audio / Video</a></li>
+                    </ul>
+                    <ul class="footer__list">
+                        <li class="footer__list-item"><a href="#" class="footer__link">Mobile</a></li>
+                        <li class="footer__list-item"><a href="#" class="footer__link">Computing</a></li>
+                        <li class="footer__list-item"><a href="#" class="footer__link">Gaming</a></li>
+                        <li class="footer__list-item"><a href="#" class="footer__link">Audio / Video</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer__inner">
+        <div class="footer__bottom">
+            <div class="footer__bottom-left">
+                <img src="https://www.digitaltrends.com/wp-content/themes/dt-stardust/assets/images/svg/logo-dtmg.svg"
+                     alt="">
+                <ul class="footer__states">
+                    <li>Portland</li>
+                    <li>New York</li>
+                    <li>Chicago</li>
+                    <li>Detroit</li>
+                    <li>Los Angles</li>
+                    <li>Toronto</li>
+                </ul>
+            </div>
+            <div class="footer__bottom-right">
+                <div class="footer__terms">
+                    <ul>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Advertise With Us</a></li>
+                        <li><a href="#">Work With Us</a></li>
+                        <li><a href="#">Diversity & Inclusion</a></li>
+                        <li><a href="#">Terms Of Use</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Do Not Sell or Share My Information</a></li>
+                        <li><a href="#">Manage Preferences</a></li>
+                        <li><a href="#">Press Room</a></li>
+                        <li><a href="#">Sitemap</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            Digital Trends Media Group may earn a commission when you buy through links on our sites.
+        </div>
+    </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+<script src="js/nav.js"></script>
+<script src="js/carousel.js"></script>
+<script src="js/image-gallery.js"></script>
+
 </body>
+
 </html>

@@ -1,0 +1,59 @@
+@use '../util' as u;
+
+.d-breadcrumb {
+  &__list {
+    display: flex;
+  }
+
+  &__item {
+    margin-right: 18px;
+    position: relative;
+
+    &:not(:last-child):after {
+      background-color: var(--c-light-gray);
+      border-radius: 50%;
+      content: "";
+      height: 2px;
+      left: calc(100% + 8px);
+      width: 2px;
+      position: absolute;
+      transform: translateY(-50%);
+      top: 50%;
+    }
+
+    //&:not(:last-child):after {
+    //  height: 0.53333vw;
+    //  left: calc(100% + 2.13333vw);
+    //  width: 0.53333vw;
+    //}
+  }
+
+  &__link {
+    color: var(--c-link-blue);
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: u.rem(14);
+    letter-spacing: .1em;
+    line-height: 1.2;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  @media screen and (max-width: 730px) {
+    &__link {
+      font-size: 3.73333vw;
+    }
+
+    &__item {
+      margin-right: 4.8vw;
+
+      &:not(:last-child):after {
+        height: 0.53333vw;
+        left: calc(100% + 2.13333vw);
+        width: 0.53333vw;
+      }
+    }
+  }
+}

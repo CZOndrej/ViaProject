@@ -1,3 +1,4 @@
+
 $dark-green: #001B28;
 
 .top-bar {
@@ -131,6 +132,25 @@ $dark-green: #001B28;
   border-bottom: 1px solid hsla(0, 0%, 44%, .5);
   margin-bottom: 5.33333vw;
   width: 100%;
+
+
+  &__link {
+    text-decoration: none;
+
+    &:hover {
+      color: #fff;
+    }
+
+    &:after {
+      bottom: 0;
+      content: "";
+      left: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+      z-index: 1;
+    }
+  }
 
   .post__image {
     background-color: gray;
