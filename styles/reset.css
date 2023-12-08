@@ -1,0 +1,13 @@
+a {
+  text-decoration: none;
+  color: inherit;
+  background-color: transparent;
+}
+
+ol,
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+/*# sourceMappingURL=reset.css.map */
